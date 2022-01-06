@@ -1,0 +1,9 @@
+.box{
+  border-radius: 8px;
+  background-color: grey;
+}
+
+.box .user-info{
+  background-color: green;
+  border-radius: 8px;
+}
