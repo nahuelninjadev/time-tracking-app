@@ -2,8 +2,13 @@ import './ActivityCard.css';
 
 function ActivityCard(props){
   return (
-    <div>
-      {props.activity}
+    <div className='activity-box h-100'>
+      hoal
+      <div className='activity-info mt-4'>
+        <p>{props.activity}</p>
+        <p>{props.hours}</p>
+        <p>{props.last}</p>
+      </div>
     </div>
   )
 }

@@ -1,39 +1,34 @@
 import './App.css';
 import UserCard from './components/UserCard/UserCard';
 import ActivityCard from './components/ActivityCard/ActivityCard';
+import { useState } from 'react';
+const dataJson = require('./data/data.json');
 function App() {
 
-  function handleClickMode(mode){
-    console.log(mode);
+  const [mode, setMode] = useState('daily');
+
+  function handleClickMode(mode) {
+    setMode(mode)
   }
 
   return (
     <div className="App">
-      <div className='container' style={{ minHeight: '300px' }}>
+      <div className='container'>
         <div className='row'>
-          <div className='col-12 col-md-3 bg-danger'>
+          <div className='col-12 col-md-3'>
             <UserCard onClick={handleClickMode} fullname="Nahuel Salazar" image="Foto" />
           </div>
           <div className='col-12 col-md-9 bg-warning'>
-            <div className='row'>
-              <div className='col-12 col-md-4 bg-danger'>
-                <ActivityCard activity="Work"  mode="d" hours="32" last="0"/>
-              </div>
-              <div className='col-12 col-md-4 bg-danger'>
-                <ActivityCard activity="Play" mode="d" hours="32" last="0"/>
-              </div>
-              <div className='col-12 col-md-4 bg-danger'>
-                <ActivityCard activity="Study" mode="d" hours="32" last="0"/>
-              </div>
-              <div className='col-12 col-md-4 bg-danger'>
-                <ActivityCard activity="Excercise" mode="d" hours="32" last="0"/>
-              </div>
-              <div className='col-12 col-md-4 bg-danger'>
-                <ActivityCard activity="Social" mode="d" hours="32" last="0"/>
-              </div>
-              <div className='col-12 col-md-4 bg-danger'>
-                <ActivityCard activity="Sel Care" mode="d" hours="32" last="0"/>
-              </div>
+            <div className='row h-100'>
+              {
+                dataJson.map((e, i) => {
+                  return (
+                    <div key={i} className='col-12 col-md-4'>
+                      <ActivityCard  activity={e.title} mode={e.timeframes[mode]} hours={e.timeframes[mode].current} last={e.timeframes[mode].previous} />
+                    </div>
+                  );
+                })
+              }
             </div>
           </div>
         </div>

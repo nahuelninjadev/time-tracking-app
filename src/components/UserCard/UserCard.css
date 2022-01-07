@@ -1,9 +1,35 @@
-.box{
-  border-radius: 8px;
-  background-color: grey;
+.user-box{
+  border-radius: var(--card-radius);
+  background-color: var(--dark-blue);
 }
 
-.box .user-info{
-  background-color: green;
-  border-radius: 8px;
+.user-info{
+  background-color: var(--blue);
+  border-radius: var(--card-radius);
+}
+
+.user-info .photo{
+  width: 60px;
+  height: 60px;
+  border: 2px solid whitesmoke;
+  border-radius: 50%;
+}
+
+.user-info .user-report p:nth-child(1){
+  margin-top: 1rem;
+  margin-bottom: 0;
+  color: var(--pale-blue);
+}
+
+.user-info .user-report p:nth-child(2){
+  font-weight: 400 !important;
+}
+
+.timeframes-options button{
+  color: var(--desaturated-blue);
+  text-decoration: none !important;
+}
+
+.timeframes-options button:hover{
+  color: whitesmoke !important;
 }
