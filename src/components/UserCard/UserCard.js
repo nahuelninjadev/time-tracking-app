@@ -11,17 +11,29 @@ function UserCard(props) {
             </div>
           </div>
           <div className='col-10 col-md-12'>
-            <div className='user-report my-4'>
+            <div className='user-report my-4 ms-2 ms-md-0'>
               <p>Report for</p>
               <p className='h1 text-white'>Jeremy Robson</p>
             </div>
           </div>
         </div>
       </div>
-      <div className='text-center text-md-start p-4 timeframes-options'>
-        <button type='button' onClick={() => props.onClick('daily')} className='btn  btn-link  text-md-start d-md-block'>Daily</button>
-        <button type='button' onClick={() => props.onClick('weekly')} className='btn  btn-link  text-md-start d-md-block'>Weekly</button>
-        <button type='button' onClick={() => props.onClick('monthly')} className='btn  btn-link  text-md-start d-md-block'>Monthly</button>
+      <div className='text-center text-md-start p-3 timeframes-options'>
+        <button 
+          type='button' 
+          onClick={() => props.onClick('daily')} 
+          className={'btn btn-link text-md-start d-md-block ' + (props.mode === 'daily' ? 'text-white' : '')}
+        >Daily</button>
+        <button 
+          type='button' 
+          onClick={() => props.onClick('weekly')} 
+          className={'btn btn-link text-md-start d-md-block ' + (props.mode === 'weekly' ? 'text-white' : '')}
+        >Weekly</button>
+        <button 
+          type='button' 
+          onClick={() => props.onClick('monthly')} 
+          className={'btn btn-link text-md-start d-md-block ' + (props.mode === 'monthly' ? 'text-white' : '')}
+        >Monthly</button>
       </div>
     </div>
   )

@@ -1,7 +1,80 @@
 .activity-box{
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  height: 100%;
+}
+
+.activity-logo{
+  width: 100%;
+  height: 50px;
+  position: relative;
+}
+
+.activity-logo.work{
   background-color: var(--work);
 }
 
+.activity-logo.play{
+  background-color: var(--play);
+}
+
+.activity-logo.study{
+  background-color: var(--study);
+}
+
+.activity-logo.exercise{
+  background-color: var(--exercise);
+}
+
+.activity-logo.social{
+  background-color: var(--social);
+}
+
+.activity-logo.selfcare{
+  background-color: var(--self-care);
+}
+
+
+.activity-logo img{
+  width: 50px;
+  position: absolute;
+  right: 10px;
+  top: -10px;
+}
+
+.activity-logo.exercise img{
+  top: 0px;
+}
+
 .activity-info{
-  background-color: blue;
+  border-radius: var(--card-radius);
+  background-color: var(--dark-blue);
+  position: absolute;
+  top: 35px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: whitesmoke;
+  transition: top .2s linear;
+}
+
+.activity-info:hover{
+  top: 40px;
+}
+
+.activity-info h1{
+  font-weight: 400;
+}
+
+.activity-info p:nth-child(3){
+  color: var(--desaturated-blue);
+}
+
+
+@media (max-width:768px){
+  .activity-box{
+    height: 180px !important;
+  }
 }
